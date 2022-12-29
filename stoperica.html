@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+    <style>
+    #timer {
+      font-size: 48px;
+      text-align: center;
+    }
+
+    button {
+      margin: 0 8px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+    }
+
+  </style>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>84-2020 WPuM</title>
+    <link rel="icon" href="http://mit.mas.bg.ac.rs/" sizes="any">
+    <meta name="description" content="Projekat iz Web Projektovanja u Masinštvu.">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./fajlovi/simple.css">
+    <link rel="stylesheet" href="./fajlovi/style.css">
+  </head>
+  <body>
+    <!-- Nav -->
+    <nav>
+      <h2>
+        <a href="https://todoist.com/productivity-methods/pomodoro-technique">
+          Štoperica za 🍅 tehniku.</a>
+      </h2>
+      <hr>
+          <button class="nav-item">
+            <a class="contrast" href="index.html">
+              <b>Naslovna</b>
+            </a>
+          </button>
+          
+          <button class="nav-item">
+            <a class="contrast" href="pomodoro.html">
+              <b>Kako funkcioniše?</b>
+            </a>
+          </button>
+
+          <button class="nav-item">
+            <a class="contrast" href="stoperica.html">
+              <b>Štoperica</b>
+            </a>
+          </button>
+   
+    </nav>
+    <!-- ./ Nav -->
+    <main class="container">
+      
+
+  <div id="timer" style="font-size: 2em;">25:00</div>
+  <div class="button-container" style="display: flex; margin: 0 auto; padding: 10px;">
+    <button id="start" style="padding: 10px 20px; margin: 0 10px; border: none; cursor: pointer;">Kreni</button>
+    <button id="pause" style="padding: 10px 20px; margin: 0 10px; border: none; cursor: pointer;">Zaustavi</button>
+    <button id="reset" style="padding: 10px 20px; margin: 0 10px; border: none; cursor: pointer;">Resetuj</button>
+  </div>
+  <div id="times-up" style="text-align: center;">Broj intervala: 0</div>
+
+<input type="number" id="durationInput" style="display: block; margin: 0 auto;">
+<button id="setDuration" style="display: block; margin: 0 auto;">Set duration</button>
+
+
+<script>
+  const durationInput = document.querySelector('#durationInput');
+  const setDurationButton = document.querySelector('#setDuration');
+
+  setDurationButton.addEventListener('click', () => {
+    secondsLeft = durationInput.value;
+  });
+</script>
+
+  <script>
+    const timerDisplay = document.querySelector('#timer');
+    let secondsLeft = 1500;
+    let interval;
+    let timesUp = 0;
+
+    function formatTime(seconds) {
+      let minutes = Math.floor(seconds / 60);
+      let formattedMinutes = `${minutes}`.padStart(2, '0');
+      let formattedSeconds = `${seconds % 60}`.padStart(2, '0');
+      return `${formattedMinutes}:${formattedSeconds}`;
+    }
+
+    function startTimer() {
+      interval = setInterval(() => {
+        secondsLeft--;
+        timerDisplay.textContent = formatTime(secondsLeft);
+
+        if (secondsLeft === 0) {
+          clearInterval(interval);
+          alert('Time is up!');
+          timesUp++;
+          document.querySelector('#times-up').textContent = `Times up: ${timesUp}`;
+        }
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      clearInterval(interval);
+    }
+
+    function resetTimer() {
+      clearInterval(interval);
+      secondsLeft = 1500;
+      timerDisplay.textContent = formatTime(secondsLeft);
+    }
+
+    const startButton = document.querySelector('#start');
+    startButton.addEventListener('click', startTimer);
+
+    const pauseButton = document.querySelector('#pause');
+    pauseButton.addEventListener('click', pauseTimer);
+
+    const resetButton = document.querySelector('#reset');
+    resetButton.addEventListener('click', resetTimer);
+  </script>
+  <footer>Milutin Vojnović 84-2020</footer>
+
+</div>
+</body>
+</html>
