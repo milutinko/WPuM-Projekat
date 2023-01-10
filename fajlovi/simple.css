@@ -25,6 +25,8 @@
     }
   }
   
+  
+
   html {
     font-family: var(--sans-font);
     scroll-behavior: smooth;
@@ -47,7 +49,9 @@
   }
   
   footer {
-    
+    width: 100%;
+    left:0;
+    right:0;
     background: var(--accent-bg);
     text-align: center;
     padding: 0 0.5rem 2rem 0.5rem;

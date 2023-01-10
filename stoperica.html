@@ -47,7 +47,7 @@
             </a>
           </button>
 
-          <button class="nav-item">
+          <button style="background-color: #f06292" class="nav-item">
             <a class="contrast" href="stoperica.html">
               <b>Štoperica</b>
             </a>
@@ -56,19 +56,24 @@
     </nav>
     <!-- ./ Nav -->
     <main class="container">
-      
 
-  <div id="timer" style="font-size: 2em;">25:00</div>
-  <div class="button-container" style="display: flex; margin: 0 auto; padding: 10px;">
-    <button id="start" style="padding: 10px 20px; margin: 0 10px; border: none; cursor: pointer;">Kreni</button>
-    <button id="pause" style="padding: 10px 20px; margin: 0 10px; border: none; cursor: pointer;">Zaustavi</button>
-    <button id="reset" style="padding: 10px 20px; margin: 0 10px; border: none; cursor: pointer;">Resetuj</button>
+  <div style="height: 20%"></div>
+
+ <div style="display: flex; align-items: center; justify-content: center;">
+  <div>
+    <div id="timer" style="font-size: 6em; color: ;">25:00</div>
+
+    <div class="button-container" style="display: flex; margin: 0 auto; padding: 10px;">
+      <button id="start" style="padding: 10px 20px; margin: 0 10px; border: none; cursor: pointer;">Kreni</button>
+      <button id="pause" style="padding: 10px 20px; margin: 0 10px; border: none; cursor: pointer;">Zaustavi</button>
+      <button id="reset" style="padding: 10px 20px; margin: 0 10px; border: none; cursor: pointer;">Resetuj</button>
+    </div>
+    <div id="times-up" style="text-align: center;">Broj intervala: 0</div>
+
+    <input type="number" id="durationInput" style="display: block; margin: 0 auto;">
+    <button id="setDuration" style="display: block; margin: 0 auto;">Set duration</button>
   </div>
-  <div id="times-up" style="text-align: center;">Broj intervala: 0</div>
-
-<input type="number" id="durationInput" style="display: block; margin: 0 auto;">
-<button id="setDuration" style="display: block; margin: 0 auto;">Set duration</button>
-
+</div>
 
 <script>
   const durationInput = document.querySelector('#durationInput');

@@ -1,3 +1,65 @@
+.eye-container {
+  position: relative; /* to make it follow the cursor*/
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.eye {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: white;
+  top: 10%;
+  left: 10%;
+}
+
+.pupil {
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  background: black;
+  top: 40%;
+  left: 40%;
+} 
+
+.eye-container2 {
+  position: relative; /* to make it follow the cursor*/
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.eye2{
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: white;
+  top: 10%;
+  left: 10%;
+}
+
+.pupil2 {
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  background: black;
+  top: 40%;
+  left: 40%;
+} 
+
+#timer {
+    font-size: 10%;
+    border: 0.25rem solid black;
+    background-color: white;
+    color: #2d3047;
+    border-radius: 5%; /* or some other value to make the border rounded*/
+  }
+
 
 li {
     margin: 6px;

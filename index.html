@@ -21,7 +21,7 @@
           Štoperica za 🍅  tehniku.</a>
       </h2>
       <hr>
-          <button class="nav-item">
+          <button class="nav-item" style="background-color: #f06292" >
             <a class="contrast" href="index.html">
               <b>Naslovna</b>
             </a>
@@ -50,11 +50,21 @@
 
 <div style="display: flex; flex-direction: row;">
   <div style="flex: 1;">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor tellus sed diam malesuada, ut iaculis lectus fermentum. Duis eget dui euismod, auctor est vel, aliquet leo. Aenean in dui vel tellus dictum dictum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor tellus sed diam malesuada, ut iaculis lectus fermentum. Duis eget dui euismod, auctor est vel, aliquet leo. Aenean in dui vel tellus dictum dictum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor tellus sed diam malesuada, ut iaculis lectus fermentum. Duis eget dui euismod, auctor est vel, aliquet leo. Aenean in dui vel tellus dictum dictum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor tellus sed diam malesuada, ut iaculis lectus fermentum. Duis eget dui euismod, auctor est vel, aliquet leo. Aenean in dui vel tellus dictum dictum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor tellus sed diam malesuada, ut iaculis lectus fermentum. Duis eget dui euismod, auctor est vel, aliquet leo. Aenean in dui vel tellus dictum dictum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor tellus sed diam malesuada, ut iaculis lectus fermentum. Duis eget dui euismod, auctor est vel, aliquet leo. Aenean in dui vel tellus dictum dictum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor tellus sed diam malesuada, ut iaculis lectus fermentum. Duis eget dui euismod, auctor est vel, aliquet leo. Aenean in dui vel tellus dictum dictum.</p>
   </div>
-  <div style="flex: 1;">
-    <p>Suspendisse potenti. Nunc ullamcorper nisl a diam luctus, et consequat eros ornare. Integer vehicula, sem a volutpat posuere, risus dolor lobortis dolor, eu cursus risus erat sed nibh. Nam pellentesque ex at est consectetur, id lobortis sem facilisis.</p>
-  </div>
+  <div style="flex: 1; position: relative;">
+    <img src="fajlovi/cirilo.png" alt="cirilo">
+    <div class="eye-container" style="position: absolute; top: 100px; left: 60px; transform: scale(0.4);">
+        <div class="eye">
+            <div class="pupil"></div>
+        </div>
+    </div>
+    <div class="eye-container" style="position: absolute; top: 95px; left: 120px; transform: scale(0.4);">
+        <div class="eye">
+            <div class="pupil"></div>
+        </div>
+    </div>
+</div>
 </div>
 
 
@@ -62,5 +72,23 @@
 <footer>Milutin Vojnović 84-2020</footer>
 
 </div>
+
+
+<script>
+const eyeContainers = document.querySelectorAll(".eye-container");
+const pupils = document.querySelectorAll(".pupil");
+
+document.addEventListener("mousemove", (event) => {
+    let x = event.clientX;
+    let y = event.clientY;
+    for (let i = 0; i < eyeContainers.length; i++) {
+        const eyeContainerRect = eyeContainers[i].getBoundingClientRect();
+        let xCoordinate = x - eyeContainerRect.left - (eyeContainerRect.width / 2);
+        let yCoordinate = y - eyeContainerRect.top - (eyeContainerRect.height / 2);
+        pupils[i].style.left = `${50 + (xCoordinate * 0.05)}%`;
+        pupils[i].style.top = `${50 + (yCoordinate * 0.05)}%`;
+    }
+});
+</script>
 </body>
 </html>
