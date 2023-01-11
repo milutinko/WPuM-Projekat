@@ -25,32 +25,6 @@
   left: 40%;
 } 
 
-.eye-container2 {
-  position: relative; /* to make it follow the cursor*/
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-}
-
-.eye2{
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-  background: white;
-  top: 10%;
-  left: 10%;
-}
-
-.pupil2 {
-  position: absolute;
-  width: 20%;
-  height: 20%;
-  border-radius: 50%;
-  background: black;
-  top: 40%;
-  left: 40%;
-} 
 
 #timer {
     font-size: 10%;
